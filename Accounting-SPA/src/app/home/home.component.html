@@ -1,0 +1,46 @@
+<div class="container mt-1">
+  <div *ngIf="!registerMode" style="text-align: center">
+    <div>
+      <carousel>
+        <slide>
+          <img src="../../assets/4.jpg" alt="first slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Amazing Accounting System</h3>
+            <p>NAB Accounting System is simple and easy to use.</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../assets/5.jpg" alt="second slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>FANAVARAN NABAFZAR IRANIAN</h3>
+            <p>The Next Step ...</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="../../assets/3.jpg" alt="third slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Automation is our mission</h3>
+            <p>Watch everything, every minute...</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div>
+      <h1>Ready to start ...</h1>
+      <p class="lead">Join us and enjoy the best accounting experience... All you need to do is sign up!</p>
+      <div class="text-center">
+        <button class="btn btn-info btn-lg mr-2" (click)="registerToggle()">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <app-register  (cancelRegister)="cancelRegisterMode($event)"></app-register>
+      </div>
+    </div>
+  </div>
+</div>
+
+
