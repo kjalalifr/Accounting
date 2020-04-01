@@ -1,4 +1,5 @@
-using Accounting.API.Models;
+using Accounting.API.Models.Account;
+using Accounting.API.Models.Member;
 using Microsoft.EntityFrameworkCore;
 
 namespace Accounting.API.Data
@@ -10,6 +11,7 @@ namespace Accounting.API.Data
         public DbSet<Photo> Photos {get; set;}
         public DbSet<Like> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<AccountGroup> AccountGroups { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

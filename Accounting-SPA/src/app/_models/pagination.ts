@@ -3,6 +3,8 @@ export interface Pagination {
     itemsPerPage: Number;
     totalItems: Number;
     totalPages: Number;
+    showingItemFrom: number;
+    showingItemTo: number;
 
 }
 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Accounting.API.Helper;
-using Accounting.API.Models;
+using Accounting.API.Helper.Params.Member;
+using Accounting.API.Models.Member;
 using Microsoft.EntityFrameworkCore;
 
 namespace Accounting.API.Data

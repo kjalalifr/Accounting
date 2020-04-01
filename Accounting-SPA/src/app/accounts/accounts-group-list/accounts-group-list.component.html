@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <div class="d-flex flex-row bd-highlight mb-3 d-flex justify-content-between">
+    <div class="p-2 bd-highlight">
+      <h4> Accounts - Group Level</h4>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button class="btn btn-primary" [routerLink]="['/accounts/accountgroup/new']"> New </button>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Item No.</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">...</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let accoutGroup of accountGroups; index as i">
+      <th scope="row">{{ i + showingItemFrom }}</th>
+      <td>{{accoutGroup.code}}</td>
+      <td>{{ accoutGroup.name }}</td>
+      <td>{{ accoutGroup.type }}</td>
+      <td>
+        <div class="btn-group" dropdown>
+          <a class="dropdown-toggle" dropdownToggle>
+            Actions
+          </a> 
+          <div class="dropdown-menu mt-3" *dropdownMenu>
+            <a class="dropdown-item" [routerLink]="['/accounts/accountgroup/',accoutGroup.id]"  ><i class="fa fa-eye"></i> View</a>
+            <a class="dropdown-item" [routerLink]="['/accounts/accountgroup/edit',accoutGroup.id]" ><i class="fa fa-edit"></i> Edit</a>
+            <a class="dropdown-item" (click)="deleteAccountGroup(accoutGroup.id)" ><i class="fa fa-trash"></i> Delete</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" ><i class="fa fa-sign-out"></i> Account General Level</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex flex-row bd-highlight align-items-center justify-content-between mb-3">
+    <div class="p-2 bd-highlight">
+      <p>
+        <strong>Showing items</strong>   {{showingItemFrom}}  <strong>of</strong> {{showingItemTo}}  <strong>from total</strong>  {{pagination.totalItems}}  
+      </p>
+    </div> 
+    <div class="p-2 bd-highlight">
+      <pagination [boundaryLinks]="true"
+        [totalItems]="pagination.totalItems"
+        [itemsPerPage]="pagination.itemsPerPage"
+        [(ngModel)]="pagination.currentPage"
+        (pageChanged)="pageChanged($event)"
+        previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+      </pagination>
+    </div> 
+  </div>
+</div>
+
+
+
+
+

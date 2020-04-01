@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Accounting.API.Models;
+using Accounting.API.Models.Member;
 using Newtonsoft.Json;
 
 

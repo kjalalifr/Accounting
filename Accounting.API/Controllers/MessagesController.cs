@@ -4,11 +4,12 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Accounting.API.Data;
-using Accounting.API.Dtos;
 using Accounting.API.Helper;
-using Accounting.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Accounting.API.Models.Member;
+using Accounting.API.Dtos.Member;
+using Accounting.API.Helper.Params.Member;
 
 namespace Accounting.API.Controllers
 {

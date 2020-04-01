@@ -44,6 +44,7 @@ namespace Accounting.API
             services.AddCors();
             services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddScoped<IAccountingRepository,AccountingRepository>();
+            services.AddScoped<IAccountRepository,AccountRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(option => {
                     option.TokenValidationParameters = new TokenValidationParameters

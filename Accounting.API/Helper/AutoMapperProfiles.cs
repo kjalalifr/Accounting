@@ -1,7 +1,9 @@
 using System.Linq;
 using AutoMapper;
-using Accounting.API.Dtos;
-using Accounting.API.Models;
+using Accounting.API.Models.Account;
+using Accounting.API.Models.Member;
+using Accounting.API.Dtos.Member;
+using Accounting.API.Dtos.Account;
 
 namespace Accounting.API.Helper
 {
@@ -34,6 +36,7 @@ namespace Accounting.API.Helper
                 .MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.IsMain).Url))
                 .ForMember(m => m.RecipientPhotoUrl, opt => opt
                 .MapFrom(u => u.Recipient.Photos.FirstOrDefault(p => p.IsMain).Url));
+            CreateMap<AccountGroupForUpdateDto,AccountGroup>();
         }
     }
 }

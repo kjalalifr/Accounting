@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Accounting.API.Models;
+using Accounting.API.Models.Member;
 
 namespace Accounting.API.Data
 {

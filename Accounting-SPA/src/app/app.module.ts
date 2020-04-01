@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 
 import { AppComponent } from './app.component';
@@ -35,6 +35,16 @@ import { ListsResolver } from './_resolver/lists.resolver';
 import { MessagesResolver } from './_resolver/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AccountsGroupListComponent } from './accounts/accounts-group-list/accounts-group-list.component';
+import { AccountGroupListResolver } from './_resolver/accounts-grouplist.resolver';
+import { AccountsService } from './_services/accounts.service';
+import { AccountsGroupDetailComponent } from './accounts/accounts-group-detail/accounts-group-detail.component';
+import { AccountGroupDetailResolver } from './_resolver/accounts-group-detail.resolver';
+import { AccountGroupEditComponent } from './accounts/account-group-edit/account-group-edit.component';
+import { AccountGroupEditResolver } from './_resolver/account-group-edit.resolver';
+import { AccountGroupNewComponent } from './accounts/account-group-new/account-group-new.component';
+
+
 
 
 
@@ -57,7 +67,11 @@ export function tokenGetter() {
       PhotoEditorComponent,
       TimeAgoPipe,
       MemberMessagesComponent,
-      DashboardComponent
+      DashboardComponent,
+      AccountsGroupListComponent,
+      AccountsGroupDetailComponent,
+      AccountGroupEditComponent,
+      AccountGroupNewComponent
    ],
    imports: [
       BrowserModule,
@@ -92,7 +106,11 @@ export function tokenGetter() {
       MemberEditResolver,
       PreventUnsavedChanges,
       ListsResolver,
-      MessagesResolver
+      MessagesResolver,
+      AccountGroupListResolver,
+      AccountsService,
+      AccountGroupDetailResolver,
+      AccountGroupEditResolver
    ],
    bootstrap: [
       AppComponent

@@ -1,15 +1,14 @@
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Accounting.API.Data;
-using Accounting.API.Dtos;
-using Accounting.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using AutoMapper;
+using Accounting.API.Dtos.Member;
+using Accounting.API.Models.Member;
+using Accounting.API.Data;
 
 namespace Accounting.API.Controllers
 {

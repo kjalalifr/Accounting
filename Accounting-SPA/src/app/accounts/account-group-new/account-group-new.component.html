@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h4 class="text-center text-primary">Accounts - Group Level - New</h4>
+      <hr>
+      <form [formGroup]="newForm" (ngSubmit)="newAccountGroup()">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="code" placeholder="Code" 
+          
+          [ngClass]="{'is-invalid': newForm.get('code').errors 
+          && newForm.get('code').touched}" >
+          <div class="invalid-feedback"
+            *ngIf="newForm.get('code').hasError('required') 
+            && newForm.get('code').touched">
+            Code is required
+          </div>
+          <div class="invalid-feedback"
+            *ngIf="newForm.get('code').hasError('maxlength') 
+            && newForm.get('code').touched">
+            Password cannot exceed 1 character
+          </div>
+        </div>  
+
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="name" placeholder="Name" 
+          
+          [ngClass]="{'is-invalid': newForm.get('name').errors 
+          && newForm.get('name').touched}" >
+          <div class="invalid-feedback"
+            *ngIf="newForm.get('name').hasError('required') 
+            && newForm.get('name').touched">
+            Code is required
+          </div>
+        </div> 
+
+
+        <div class="form-group">
+          <textarea class="form-control" rows="6" formControlName="description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="radio-inline">
+            <input class="mr-3" type="radio" value="ترازنامه ای" formControlName="type">ترازنامه ای
+          </label>
+          <label class="radio-inline ml-3">
+            <input class="mr-3" type="radio" value="سود و زیانی" formControlName="type" >سود و زیانی
+          </label>
+          <label class="radio-inline ml-3">
+            <input class="mr-3" type="radio" value="انتظامی" formControlName="type" >انتظامی
+          </label>
+        </div>
+
+        <div class="form-group text-center">
+          <button class="btn btn-success" [disabled]="!newForm.valid" type="submit">Save</button>
+          <button class="btn btn-default" type="button"  [routerLink]="['/accounts/accountgroup']">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  
+</div>

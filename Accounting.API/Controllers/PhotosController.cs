@@ -5,12 +5,12 @@ using AutoMapper;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Accounting.API.Data;
-using Accounting.API.Dtos;
 using Accounting.API.Helper;
-using Accounting.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Accounting.API.Dtos.Member;
+using Accounting.API.Models.Member;
 
 namespace Accounting.API.Controllers
 {
