@@ -12,6 +12,7 @@ namespace Accounting.API.Data
         public DbSet<Like> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<AccountGroup> AccountGroups { get; set; }
+        public DbSet<AccountGeneral> AccountGenerals { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Accounting.API.Helper;
 using AutoMapper;
+using Accounting.API.Data.Account;
 
 namespace Accounting.API
 {
@@ -45,6 +46,7 @@ namespace Accounting.API
             services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddScoped<IAccountingRepository,AccountingRepository>();
             services.AddScoped<IAccountRepository,AccountRepository>();
+            services.AddScoped<IAccountGeneralRepository, AccountGeneralRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(option => {
                     option.TokenValidationParameters = new TokenValidationParameters
